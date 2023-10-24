@@ -6,7 +6,7 @@ body {
   font-family: "Inter";
   font-style: normal;
 }
-.top-header {
+header {
   background-color: white;
   position: sticky;
   top: 0;
@@ -18,23 +18,31 @@ body {
   align-items: center;
 }
 
-.top-header .name {
+h1 {
   font-size: 26px;
 }
 
-.nav ul {
+h2 {
+  font-size: 28px;
+}
+
+header nav ul {
   display: flex;
   list-style-type: none;
   font-size: 14px;
   margin-bottom: 0;
 }
 
-.nav li {
+header nav li {
   padding-inline: 10px;
 }
 
-.nav a {
+header nav a {
   text-decoration: none;
+  color: #000;
+}
+
+header nav a:hover {
   color: #000;
 }
 
@@ -62,6 +70,8 @@ body {
 }
 
 .picture {
+  width: 100%;
+  height: 100%;
   flex: 1;
   margin: 0 20px;
   z-index: 0;
@@ -82,9 +92,11 @@ body {
   font-family: "Spectral";
   font-weight: 800;
   font-style: italic;
+  line-height: 19px;
   width: 60%;
+  margin-bottom: 8px;
 }
-#about-me p {
+.about-me__content {
   width: 80%;
   font-size: 14px;
 }
@@ -92,12 +104,14 @@ body {
 #gallery {
   /*	min-height: 100vh; */
 }
+
 .title {
   text-align: center;
   padding-block: 2em;
 }
 .gallery .nav {
   justify-content: center;
+  gap: 20px;
 }
 .nav-pills .nav-link.active-tag,
 .nav-pills .show > .nav-link {
@@ -137,20 +151,29 @@ body {
   font-size: 24px;
 }
 
-.quote {
+blockquote {
   font-family: "Spectral";
-  font-style: italic;
+  background-color: white;
   width: 70%;
   margin: auto;
   padding-block: 3em;
+  margin-bottom: 15px;
 }
+
+.quote {
+  background-color: white;
+  width: auto;
+}
+
 .quote__text {
-  font-family: Spectral;
+  font-family: "Spectral";
+  font-size: 40px;
+  line-height: 48px;
   font-style: italic;
   font-weight: 300;
 }
 .quote__author {
-  font-family: Spectral;
+  font-family: "Spectral";
   font-weight: 800;
   font-size: 22px;
 }
@@ -160,13 +183,14 @@ body {
   background-color: #a8d5d8;
   position: relative;
 }
-#services .container::before {
+
+#services .container::after {
   content: " ";
   background-color: #1c6474;
   position: absolute;
   width: 100%;
-  height: 30%;
-  bottom: 0;
+  height: 19.2%;
+  bottom: 289px;
   left: 0;
   z-index: 0;
 }
@@ -189,7 +213,7 @@ body {
   z-index: 1;
 }
 
-#contact {
+footer {
   margin: auto;
   background-color: #d8d3a8;
   position: relative;
@@ -197,7 +221,7 @@ body {
   padding-block: 100px;
 }
 
-#contact .container {
+footer .container {
   display: flex;
 }
 .picture.right::before {
@@ -247,7 +271,7 @@ input[type="submit"] {
     flex: 2;
   }
   #about,
-  #contact .container {
+  footer .container {
     align-items: center;
   }
   .about-me__title {
@@ -302,10 +326,10 @@ input[type="submit"] {
     z-index: 0;
   }
 
-  #contact .container {
+  footer .container {
     flex-direction: column;
   }
-  #contact .picture.right {
+  footer .picture.right {
     margin-top: 1em;
   }
   .picture.right::before {
@@ -319,16 +343,16 @@ input[type="submit"] {
 }
 
 @media all and (max-width: 650px) {
-  .top-header {
+  header {
     flex-direction: column;
     padding-inline: 0;
   }
-  .top-header .nav,
-  .top-header .nav ul {
+  header .nav,
+  header .nav ul {
     width: 100%;
     padding: 0 0 0 0;
   }
-  .top-header .nav li {
+  header .nav li {
     flex: 1;
     padding-block: 1em;
     text-align: center;
@@ -344,7 +368,7 @@ input[type="submit"] {
     max-width: 90%;
   }
   #about,
-  #contact {
+  footer {
     padding-inline: 2em;
     padding-block: 2em;
   }
